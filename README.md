@@ -7,6 +7,11 @@ Various analytical finance tools including:
 - Investment Growth Projection
 - Income Tax calculation
 
+```python
+# Calculate IRR, using a DataFrame of cashflows with 'date' and 'amount' columns
+irr = finance.xirr(df)
+```
+
 ## reporting.py
 Module for creating report outputs from DataFrames and other inputs, for export to HTML, PDF, etc...
 
