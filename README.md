@@ -1,4 +1,4 @@
-A set of libraries I've written that have general purpose utility across many different types of problems:
+A set of Python libraries I've written that have general purpose utility across many different types of problems
 
 ## finance.py
 Various analytical finance tools including:
@@ -30,3 +30,6 @@ sim = mc.Simulation(f=stackup)
 sim.run()
 
 ```
+
+## statistics.py
+Module for statistical analysis of datasets, oriented towards manufacturing statistics
