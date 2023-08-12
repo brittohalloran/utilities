@@ -14,7 +14,7 @@ Module for creating report outputs from DataFrames and other inputs, for export 
 Set of utilities for conducting Monte-Carlo simulations
 
 ```python
-import monte_carlo as mc
+import simulation as mc
 
 # Make some input random variables
 a = mc.Norm(interval=(5, 10)) # 90% confidence interval
