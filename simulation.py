@@ -11,8 +11,8 @@ sns.set()
 
 class Simulation:
     """
-    Creates a Monte Carlo simulation object which takes in a sampling function 
-    f and can be run. 
+    Creates a Monte Carlo simulation object which takes in a sampling function
+    f and can be run.
 
     Args:
         f (function): A function which returns a single sample
@@ -36,7 +36,7 @@ class Simulation:
         end_time = time.time()
         print(f"{self.n:,} simulations completed in {end_time - start_time:.1f} s")
         print(f"Mean    : {statistics.mean(s):8,.4f}")
-        print(f"St. dev : {statistics.stdev(s):8,.4f}")
+        print(f"St. dev : {statistics.std(s):8,.4f}")
         print("")
         print("Percentiles:")
         print(f"5%  : {np.percentile(s, 5):,.4f}")
@@ -67,7 +67,6 @@ class RetirementSimulation:
     def __init__(
         self, start_date, start_balance, monthly_savings, retirement_date, withdrawls={}
     ):
-
         self.start_date = start_date
         self.start_balance = start_balance
         self.monthly_savings = monthly_savings
@@ -82,7 +81,6 @@ class RetirementSimulation:
             return f"{y}-{m+1:02}-01"
 
     def run(self):
-
         # Based on S&P 500 monthly returns 1989-2019
         monthly_return = Norm(mean=1.007, sd=0.041)
 

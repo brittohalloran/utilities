@@ -12,13 +12,13 @@ sns.set()
 def tolerance_interval_factor(c, p, n, one_sided=False):
     """
     Returns the one or two-sided tolerance interval k-factor.
-    
+
     Calculated per NIST guidance:
     https://www.itl.nist.gov/div898/handbook/prc/section2/prc263.htm
 
     If one-sided, uses the non-central t-distribution method.
     If two-sided, uses the chi-squared method.
-    
+
     """
 
     dof = n - 1
@@ -29,7 +29,7 @@ def tolerance_interval_factor(c, p, n, one_sided=False):
     else:
         z_p = norm.isf((1 - p) / 2)  # Half because two-tailed
         x_p = chi2.isf(c, dof)
-        k = sqrt((dof * (1 + (1 / n)) * z_p ** 2) / x_p)
+        k = sqrt((dof * (1 + (1 / n)) * z_p**2) / x_p)
         return k
 
 
@@ -133,9 +133,9 @@ class Dataset:
         """
         Returns the statistical tolerance interval.
 
-        The tolerance interval is the range over which we are c % confident 
-        that at least p % of the population lies. It is based on an assumption 
-        of normality, so a warning will be raised if the data is not normally 
+        The tolerance interval is the range over which we are c % confident
+        that at least p % of the population lies. It is based on an assumption
+        of normality, so a warning will be raised if the data is not normally
         distributed.
 
         Arguments:
